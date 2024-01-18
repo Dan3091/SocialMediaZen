@@ -37,7 +37,6 @@ def main(h, m, s):
     social_media = ["YouTube", "Facebook", "Instagram"]
     while total_sec > 0:
         app_name = current_app_on_focus()
-        print(app_name)
         for social in social_media:
             if social in app_name:
                 time_left_countdown = datetime.timedelta(seconds=total_sec)
