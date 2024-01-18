@@ -7,19 +7,6 @@ import webbrowser
 
 
 message = "You've been on Facebook for more than 20 minutes, I'm sorry but that's enough, take a break!"
-# Create a function that acts as a countdown:
-def timer(h, m, s):
-    total_sec = h * 3600 + m * 60 + s
-    social_media = ["YouTube", "Facebook", "Instagram"]
-    while total_sec > 0:
-        app_name = current_app_on_focus()
-        print(app_name)
-        for social in social_media:
-            if social in app_name:
-                time_left_countdown = datetime.timedelta(seconds=total_sec)
-                time.sleep(1)
-                total_sec -= 1
-    return popup_message(message), redirect_to_homepage()
 
 #Create function that return the current app on focus:
 def current_app_on_focus():
@@ -43,3 +30,20 @@ def redirect_to_homepage():
         webbrowser.get('chrome').open(url, new=0)
     except:
         pass
+
+#The main logic function:
+def main(h, m, s):
+    total_sec = h * 3600 + m * 60 + s
+    social_media = ["YouTube", "Facebook", "Instagram"]
+    while total_sec > 0:
+        app_name = current_app_on_focus()
+        print(app_name)
+        for social in social_media:
+            if social in app_name:
+                time_left_countdown = datetime.timedelta(seconds=total_sec)
+                time.sleep(1)
+                total_sec -= 1
+    return popup_message(message), redirect_to_homepage()
+
+if __name__ == "__main__":
+    main(0, 20, 0)
