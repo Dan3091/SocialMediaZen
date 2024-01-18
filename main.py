@@ -53,4 +53,4 @@ if __name__ == "__main__":
     window.withdraw()
     showinfo(title="Info", message="Welcome To SocialMediaZen App!!! Leave the app in background...")
     while True:
-        main(0, 0, 10)
+        main(0, 20, 0)
