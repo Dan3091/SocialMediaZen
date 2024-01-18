@@ -36,7 +36,10 @@ def popup_message(message):
 #Create a function to redirect to homepage:
 def redirect_to_homepage():
     url = 'https://google.com'
-    webbrowser.register('chrome',
-                    None,
-                    webbrowser.BackgroundBrowser("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"))
-    webbrowser.get('chrome').open(url, new=0)
+    try:
+        webbrowser.register('chrome',
+                            None,
+                            webbrowser.BackgroundBrowser("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"))
+        webbrowser.get('chrome').open(url, new=0)
+    except:
+        pass
