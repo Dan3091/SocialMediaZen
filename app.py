@@ -6,21 +6,23 @@ from tkinter.messagebox import showinfo
 # Create a function that acts as a countdown:
 def timer(h, m, s):
     total_sec = h * 3600 + m * 60 + s
+    social_media = ["YouTube", "Facebook", "Instagram"]
     while total_sec > 0:
-        time_left_countdown = datetime.timedelta(seconds=total_sec)
-        print(time_left_countdown)
-        time.sleep(1)
-        total_sec -= 1
-    print("The timer = 0 seconds")
+        app_name = current_app_on_focus()
+        for social in social_media:
+            if social in app_name:
+                time_left_countdown = datetime.timedelta(seconds=total_sec)
+                time.sleep(1)
+                total_sec -= 1
+
+    return popup_message("You've been on Facebook for more than 20 minutes, I'm sorry but that's enough, take a break!")
 #Create function that return the current app on focus:
 def current_app_on_focus():
-    while True:
-        time.sleep(1)
-        window_name = win32gui.GetWindowText(win32gui.GetForegroundWindow())
-        print(window_name)
+    window_name = win32gui.GetWindowText(win32gui.GetForegroundWindow())
+    return window_name
 
 #Create a function that call a popup window message
 def popup_message(message):
     return showinfo(title="Warning", message=message)
 
-popup_message("You've been on Facebook for more than 20 minutes, I'm sorry but that's enough, take a break!")
+timer(00, 00, 10)
