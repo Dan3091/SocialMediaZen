@@ -12,4 +12,10 @@ def timer(h, m, s):
         total_sec -= 1
     print("The timer = 0 seconds")
 
-timer(00, 00, 10)
+def current_app_on_focus():
+    while True:
+        time.sleep(2)
+        window_name = win32gui.GetWindowText(win32gui.GetForegroundWindow())
+        print(window_name)
+
+current_app_on_focus()
