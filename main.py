@@ -46,4 +46,5 @@ def main(h, m, s):
     return popup_message(message), redirect_to_homepage()
 
 if __name__ == "__main__":
-    main(0, 20, 0)
+    while True:
+        main(0, 20, 0)
