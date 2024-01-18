@@ -45,5 +45,9 @@ def main(h, m, s):
     return popup_message(message), redirect_to_homepage()
 
 if __name__ == "__main__":
+    window = Tk()
+    window.attributes('-topmost', 1)
+    window.withdraw()
+    showinfo(title="Info", message="Welcome To SocialMediaZen App!!! Leave the app in background...")
     while True:
-        main(0, 20, 0)
+        main(0, 0, 10)
