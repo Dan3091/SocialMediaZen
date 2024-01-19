@@ -43,8 +43,8 @@ def redirect_to_homepage():
 #The main logic function:
 def main(h, m, s):
     """
-    Given the time in hours, minutes and seconds format to the main function,
-     it returns the popup_message(message) and redirect_to_homepage() functions.
+    Given the countdown time in hours, minutes and seconds format to the main function,
+    after time is up, it returns the popup_message(message) and redirect_to_homepage() functions.
      """
 
     name = ""
