@@ -1,12 +1,9 @@
 import win32gui
 import time
-import datetime
 from tkinter.messagebox import showinfo
 from tkinter import Tk
 import webbrowser
 
-
-message = "You've been on Facebook for more than 20 minutes, I'm sorry but that's enough, take a break!"
 
 #Create function that return the current app on focus:
 def current_app_on_focus():
@@ -33,6 +30,11 @@ def redirect_to_homepage():
 
 #The main logic function:
 def main(h, m, s):
+    """
+    Given the time in hours, minutes and seconds format to the main function,
+     it returns the popup_message(message) and redirect_to_homepage() functions.
+     """
+
     name = ""
     total_sec = h * 3600 + m * 60 + s
     social_media = ["YouTube", "Facebook", "Instagram"]
@@ -41,7 +43,6 @@ def main(h, m, s):
         for social in social_media:
             if social in app_name:
                 name = social
-                time_left_countdown = datetime.timedelta(seconds=total_sec)
                 time.sleep(1)
                 total_sec -= 1
     return popup_message(f"You've been on {name} for more than 20 minutes, I'm sorry but that's enough, take a break!"),\
