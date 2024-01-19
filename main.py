@@ -1,7 +1,6 @@
 import win32gui
 import time
-from tkinter.messagebox import showinfo
-from tkinter import Tk
+from tkinter import Tk, messagebox
 import webbrowser
 
 
@@ -23,7 +22,7 @@ def popup_message(message):
     window = Tk()
     window.attributes('-topmost', 1)
     window.withdraw()
-    return showinfo(title="Warning", message=message)
+    return messagebox.showinfo(title="Warning", message=message)
 
 #Create a function to redirect to homepage:
 def redirect_to_homepage():
@@ -64,6 +63,6 @@ if __name__ == "__main__":
     window = Tk()
     window.attributes('-topmost', 1)
     window.withdraw()
-    showinfo(title="Info", message="Welcome To SocialMediaZen App!!! Leave the app in background...")
+    messagebox.showinfo(title="Info", message="Welcome To SocialMediaZen App!!! Leave the app in background...")
     while True:
         main(0, 20, 0)
