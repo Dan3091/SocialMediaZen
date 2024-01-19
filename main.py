@@ -7,11 +7,19 @@ import webbrowser
 
 #Create function that return the current app on focus:
 def current_app_on_focus():
+    """
+    By using win32gui module and GetForegroundWindow() method it returns the current foreground app.
+    """
+
     window_name = win32gui.GetWindowText(win32gui.GetForegroundWindow())
     return window_name
 
 #Create a function that call a popup window message:
 def popup_message(message):
+    """
+    Given a message to popup_message(message) function it returns a popup window info.
+    """
+
     window = Tk()
     window.attributes('-topmost', 1)
     window.withdraw()
@@ -19,6 +27,10 @@ def popup_message(message):
 
 #Create a function to redirect to homepage:
 def redirect_to_homepage():
+    """
+    This function redirect to google homepage.
+    """
+
     url = 'https://google.com'
     try:
         webbrowser.register('chrome',
